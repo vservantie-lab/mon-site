@@ -1,14 +1,208 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<titre>Virgile Servantie</titre>
-<style>
-<body {display: flex; justify-content:center; align-items: center; height: 100vh; margin: 0; font-family: sans-serif; background-color: #fafafa; color: #333;}
-h1 { font-weight: 300; font-size: 2.5em; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virgile Servantie | Reboot.fr</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            yellow: '#FFC82C', // Jaune
+                            navy: '#213654',   // Bleu marine
+                            lightTeal: '#A9DCD6', // Bleu clair
+                            teal: '#007A86'    // Bleu canard
+                        }
+                    },
+                    boxShadow: {
+                        'solid': '6px 6px 0px 0px rgba(33, 54, 84, 1)',
+                        'solid-teal': '8px 8px 0px 0px rgba(0, 122, 134, 1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC; /* Fond global très clair */
+            color: #213654; /* Texte par défaut en bleu marine */
+        }
+
+        /* Animations d'apparition */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-<body>
-<h1>Virgile Servantie</h1>
+<body class="antialiased overflow-x-hidden relative bg-[#F8FAFC]">
+
+    <!-- Fond géométrique structurant (Lignes et bloc droit) -->
+    <div class="fixed top-0 right-0 w-1/3 lg:w-1/4 h-full bg-white border-l border-gray-200 -z-10 hidden md:block"></div>
+    <div class="fixed top-0 left-[15%] w-[1px] h-full bg-gray-200 -z-10 hidden lg:block"></div>
+    <div class="fixed top-[20%] left-0 w-full h-[1px] bg-gray-200 -z-10 hidden lg:block"></div>
+    
+    <!-- Header Fixe (Sans Menu) -->
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <img src="https://github.com/vservantie-lab/mon-site/blob/main/logo_VS.png" alt="Logo Reboot.fr" class="h-10 w-auto" onerror="this.src='https://placehold.co/100x100/007A86/FFFFFF?text=VS'">
+                <span class="font-bold text-xl tracking-tight text-brand-navy uppercase">Reboot.fr</span>
+            </div>
+            <!-- Menu supprimé ici -->
+        </div>
+    </header>
+
+    <!-- MAIN SECTION -->
+    <section class="min-h-screen flex items-center relative overflow-hidden pt-32 pb-24">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-12 lg:gap-20 items-center justify-between w-full z-10">
+            
+            <!-- Texte d'accroche (Prend environ 60% de la largeur sur md/lg) -->
+            <div class="fade-in-up flex-1 w-full md:w-3/5 lg:max-w-2xl">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 text-brand-navy tracking-tight">
+                    Le <span class="text-brand-teal relative inline-block">
+                        changement
+                        <span class="absolute bottom-1 left-0 w-full h-3 bg-brand-yellow/40 -z-10"></span>
+                    </span> par le <span class="text-brand-teal relative inline-block">
+                        bon sens
+                        <span class="absolute bottom-1 left-0 w-full h-3 bg-brand-yellow/40 -z-10"></span>
+                    </span>, pas par le dogme.
+                </h1>
+                
+                <p class="text-lg text-gray-700 mb-10 leading-relaxed">
+                    Je suis <strong>Virgile Servantie</strong>. Fort de 15 ans d'expérience au cœur des systèmes complexes, je défends une vision où l'humain et le pragmatisme priment sur les cadres prescriptifs. L'enjeu n'est plus d'appliquer une méthode, mais de comprendre la dynamique de votre organisation pour y insuffler un changement durable.
+                </p>
+
+                <!-- Bouton unique -->
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://www.linkedin.com/in/virgileservantie/" target="_blank" class="bg-brand-navy text-white px-8 py-3 font-semibold border-2 border-brand-navy hover:bg-white hover:text-brand-navy transition-all shadow-solid hover:shadow-none hover:translate-x-[6px] hover:translate-y-[6px] flex items-center gap-2">
+                        <i class="fa-brands fa-linkedin text-xl"></i> Échanger sur LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <!-- Image de Profil (Prend environ 40% de la largeur sur md/lg) -->
+            <div class="fade-in-up w-full md:w-2/5 max-w-sm lg:max-w-md mx-auto md:mx-0 relative mt-10 md:mt-0 flex justify-end">
+                <!-- Carré de décoration jaune derrière -->
+                <div class="absolute -bottom-6 -left-6 w-24 h-24 lg:w-32 lg:h-32 bg-brand-yellow -z-10"></div>
+                <!-- Carré de décoration teal en haut à droite -->
+                <div class="absolute -top-4 -right-4 w-16 h-16 lg:w-24 lg:h-24 border-4 border-brand-teal -z-10 bg-white"></div>
+                
+                <!-- Conteneur de l'image géométrique -->
+                <div class="relative w-full aspect-[3/4] border-4 border-brand-navy bg-white p-2 z-20">
+                    <img src="https://github.com/vservantie-lab/mon-site/blob/main/vservantie_coach_transformation_change_ia.png" 
+                         alt="Portrait de Virgile Servantie" 
+                         class="w-full h-full object-cover object-center"
+                         onerror="this.src='https://placehold.co/600x800/E2E8F0/213654?text=Photo+Virgile'">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-navy text-white relative overflow-hidden">
+        <!-- Lignes géométriques décoratives -->
+        <div class="absolute top-0 right-0 w-32 h-full border-l border-white/10"></div>
+        <div class="absolute bottom-20 left-0 w-full h-[1px] bg-white/10"></div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+                
+                <div class="fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Au cœur des dynamiques humaines</h2>
+                    <p class="text-gray-300 mb-6 text-lg leading-relaxed">
+                        Accompagner la transformation d'une organisation demande bien plus que de déployer des processus. C'est avant tout comprendre ce qui anime les individus et les collectifs. Mon intervention s'appuie sur cinq moteurs fondamentaux pour dénouer les complexités et aligner les équipes :
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-3 mb-10">
+                        <span class="px-4 py-2 bg-transparent border-2 border-brand-lightTeal text-brand-lightTeal text-sm font-semibold uppercase tracking-wider">Idéation</span>
+                        <span class="px-4 py-2 bg-transparent border-2 border-brand-yellow text-brand-yellow text-sm font-semibold uppercase tracking-wider">Adaptabilité</span>
+                        <span class="px-4 py-2 bg-transparent border-2 border-brand-teal text-brand-teal text-sm font-semibold uppercase tracking-wider">Inclusion</span>
+                        <span class="px-4 py-2 bg-transparent border-2 border-white text-white text-sm font-semibold uppercase tracking-wider">Assurance</span>
+                        <span class="px-4 py-2 bg-transparent border-2 border-brand-lightTeal text-brand-lightTeal text-sm font-semibold uppercase tracking-wider">Positivité</span>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 border-2 border-white/10 p-8 fade-in-up relative" style="transition-delay: 200ms;">
+                    <!-- Déco géométrique -->
+                    <div class="absolute -top-3 -right-3 w-12 h-12 bg-brand-teal -z-10"></div>
+                    
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-brand-yellow flex items-center justify-center text-brand-navy text-xl border-2 border-brand-yellow">
+                            <i class="fa-solid fa-masks-theater"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">L'autre scène</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        L'empathie et la fine compréhension des dynamiques de groupe se cultivent aussi loin des open spaces. Je suis passionné par la narration et la construction des personnages — avec une tendresse particulière pour comprendre la psychologie des "méchants" dans les histoires !
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Sur mon temps libre, il m'arrive de monter sur les planches comme comédien ou de chanter, prolongeant l'expérience d'un album rock sorti il y a quelques années. Ces expériences nourrissent ma capacité d'écoute et d'adaptation au quotidien.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#1a2b44] text-gray-400 py-12 border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            
+            <div class="flex items-center gap-3">
+                <img src="logo_VS.png" alt="Logo" class="h-10 w-auto grayscale opacity-50">
+                <span class="font-bold text-lg tracking-tight text-white uppercase">Reboot.fr</span>
+            </div>
+            
+            <div class="text-sm">
+                &copy; <script>document.write(new Date().getFullYear())</script> Virgile Servantie. Tous droits réservés.
+            </div>
+            
+            <div class="flex gap-4">
+                <a href="https://www.linkedin.com/in/virgileservantie/" target="_blank" class="w-10 h-10 border border-gray-600 flex items-center justify-center hover:bg-brand-teal hover:text-white hover:border-brand-teal transition-colors">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.fade-in-up').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
